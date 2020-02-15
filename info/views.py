@@ -7,7 +7,7 @@ from rest_framework.permissions import IsAdminUser, AllowAny
 class InfoViewSet(ModelViewSet):
     serializer_class = InfoModelSerializer
     queryset = InfoModel.objects.all()
-    permission_classes = AllowAny
+    permission_classes = [AllowAny, ]
 
     def get_permissions(self):
         if self.action == 'create':
